@@ -39,22 +39,20 @@ private:
 public:
 
     GestorLibros(){}
+
+    bool existe(int isbn){
+        for(int i = 0 ; i < libros.size() ; ++i){
+            if(libros[i].isbn == isbn ) return true;
+        }
+        return false;
+    }
     void AnadirLibro(int isbn , string t ,string a ,string g){
         Libro l;
         l.isbn = isbn;
         l.titulo = t;
         l.autor = a;
         l.genero = g;
-
-        if(libros.size() > 0){
-            for(int i = 0 ; i<libros.size();++i){
-                if(libros[i].isbn == l.isbn){ cout<<"ISBN repetido"<<endl ; return;}
-                else libros.push_back(l);
-            }
-
-        }else{
-            libros.push_back(l);
-        }
+        libros.push_back(l);
 
     }
 
@@ -143,8 +141,8 @@ int main(){
             cout<<"Ingresa el titulo : ";getline(cin,t);
             cout<<"Ingresa el autor : ";getline(cin,a);
             cout<<"Ingresa el genero : ";getline(cin,g);
-
-            gestor->AnadirLibro(isbn,t,a,g);
+            if(gestor->existe(isbn)) cout<<"Ya existe el isbn "<<endl;
+            else gestor->AnadirLibro(isbn,t,a,g);
         break;
         case 2:
             cout<<"Ingresa el ISBN del libro a eliminar ";

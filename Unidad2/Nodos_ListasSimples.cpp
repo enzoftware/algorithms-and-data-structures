@@ -75,6 +75,9 @@ class Lista{
             return num_nodos;
         }
 
+
+        //TODO REHACER FUNCION , NO FUNCIONA :'V
+        
         bool insertar_posicion(int pos , T data){
             Nodo<T>*nuevo_nodo = new Nodo<T>(data);
             Nodo<T>*temporal = elemento_cabeza;
@@ -100,6 +103,8 @@ class Lista{
 
 
         }
+
+        //--------------------------------------------
 
 
         void ordenar(){
@@ -198,8 +203,8 @@ int main(){
     cin>>e;
     lista->insertar_final(e);
     cin>>e>>pos;
-    if(!lista->insertar_posicion(pos,e)) cout<<"Posicion no aceptada"<<endl;
-    //lista->ordenar();
+    //if(!lista->insertar_posicion(pos,e)) cout<<"Posicion no aceptada"<<endl;
+    lista->ordenar();
     cout<<lista->getNumNodos()<<endl;
     lista->imprimir_lista();
 

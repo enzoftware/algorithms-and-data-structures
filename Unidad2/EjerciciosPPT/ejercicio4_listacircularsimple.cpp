@@ -83,7 +83,55 @@ public:
     }
 
     bool eliminarInicio(){
-        
+        if(vacio()) return false;
+        if(primero == ultimo){
+            primero = ultimo = NULL;
+        }else{
+            Nodo * temp = primero;
+            primero = primero->next;
+            ultimo->next = primero;
+            delete temp;
+        }
+        --n;
+        return true;
+    }
+
+    bool eliminarFinal(){
+
+        if(vacio()) return false;
+        if(primero == ultimo){
+            primero = ultimo = NULL;
+        }else{
+            Nodo * temp = primero;
+            bool seguir = true;
+            while(seguir){
+                if(temp->next == ultimo){
+                    Nodo *aux = ultimo;
+                    ultimo = temp;
+                    temp->next = primero;
+                    delete aux;
+                    seguir = false;
+                }else
+                    temp = temp->next;
+            }
+        }
+        --n;
+        return true;
+    }
+
+    int EncontrarDato(T dat){
+        if(vacio() ) return -1;
+        Nodo * aux = primero;
+        int pos = 0 , c = 0 ;
+        while(c++ < n ){
+            if(aux->dato == dat)
+                return pos;
+            else{
+                ++pos;
+                aux = aux->next;
+            }
+        }
+        return -1;
     }
 
 };
@@ -103,12 +151,18 @@ int main(){
     cin>>x;
     lc.insertarFinal(x);
 
+    lc.eliminarInicio();
+    lc.eliminarFinal();
+
     ListaCircular<char>::iterador it = lc.first();
     for( ; it != lc.last() ; it++){
         cout<< *it << "  ";
     }
     /*      Ultimo elmento no se imprime dentro del for se imprime individual saliendo      */
-    cout<< *it << " ";
+    cout<< *it << " "<<endl;
+
+    if(lc.EncontrarDato('m') < 0) cout<<" No ";
+    else cout<<" SI";
 
     cout<<endl;
 

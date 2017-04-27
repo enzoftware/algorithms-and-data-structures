@@ -116,6 +116,21 @@ public:
         return true;
     }
 
+    int EncontrarDato(T data){
+        Nodo*temp = inicio;
+        int pos = 0 , cont = 0;
+        while (temp){
+            if(temp->elemento ==  data){
+                return pos;
+                cont++;
+            }
+            temp = temp->next;
+            pos++;
+        }
+
+        if(cont == 0) return -1;
+    }
+
 
     bool insertarFinal(T data){
         insertarPosicion(data,n);
@@ -184,6 +199,9 @@ int main(){
     for( ; it != ls.Finalito() ; it++){
         cout<< *it << "  ";
     }
+
+    if(ls.EncontrarDato(25) < 0 ) cout<<" Dato no encontrado"<<endl;
+    else cout<<"Dato encontrado en la posicion "<<ls.EncontrarDato(25)<<endl;
 
     cout<<endl;
 

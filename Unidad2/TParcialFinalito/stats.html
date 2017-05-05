@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Proyecto Parcial</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="salida.js"></script>
+</head>
+<body>
+<div id="contenitore">
+
+	<div class="left">
+
+	<table>
+		<caption>Eficiencia en tiempos</caption>
+		<tbody>
+			<tr><td>Hash Table</td><td id="p1">_</td><td style="background-color:#336699"></td></tr>
+			<tr><td>Listas Enlazadas</td><td id="p2">_</td><td style="background-color:#003366"></td></tr>
+			<tr><td>Arreglos</td><td id = "p3" >_</td><td style="background-color:#ff6600"></td></tr>
+		</tbody>
+	</table>
+
+
+	<div class="button" onclick="viewGraphInsert()">Insertar Datos</div> <br>
+	<div class="button" onclick="viewGraphElim()">Eliminar Datos</div> <br>
+	<div class="button" onclick="viewGraphBusc()">Buscar Datos</div> <br>
+	</div>
+
+	<div class="left">
+		<div id="grafico">
+			<div class="riga" style="top:25%"><div>0,075</div></div>
+			<div class="riga" style="top:50%"><div>0,050</div></div>
+			<div class="riga" style="top:75%"><div>0,025</div></div>
+			<div id="col0" style="left:0; background-color:#336699;" class="column"></div>
+			<div id="col1" style="left:30%; background-color:#003366;" class="column"></div>
+			<div id="col2" style="left:60%; background-color:#ff6600;" class="column"></div>
+		</div>
+	</div>
+
+	<div class="canc"></div>
+</div>
+
+<script type="text/javascript">
+	function viewGraphInsert(){
+
+		document.getElementById("p1").innerHTML = ht+'%';
+		document.getElementById("p2").innerHTML = le+'%';
+		document.getElementById("p3").innerHTML = ar+'%';
+
+		$('.column').css('height','0');
+
+		$('table tr').each(function(index) {
+		var ha = $(this).children('td').eq(1).text();
+		$('#col'+index).animate({height: ha}, 1500).html("<div>"+ha+'ms'+"</div>");
+
+		});
+	}
+
+	function viewGraphElim(){
+
+		document.getElementById("p1").innerHTML = ht1+'%';
+		document.getElementById("p2").innerHTML = le1+'%';
+		document.getElementById("p3").innerHTML = ar1+'%';
+
+		$('.column').css('height','0');
+
+		$('table tr').each(function(index) {
+		var ha = $(this).children('td').eq(1).text();
+		$('#col'+index).animate({height: ha}, 1500).html("<div>"+ha+'ms'+"</div>");
+
+		});
+
+	}
+
+
+	function viewGraphBusc(){
+
+
+		document.getElementById("p1").innerHTML = ht2+'%';
+		document.getElementById("p2").innerHTML = le2+'%';
+		document.getElementById("p3").innerHTML = ar2+'%';
+
+		$('.column').css('height','0');
+
+		$('table tr').each(function(index) {
+		var ha = $(this).children('td').eq(1).text();
+		$('#col'+index).animate({height: ha}, 1500).html("<div>"+ha+'ms'+"</div>");
+
+		});
+	}
+
+
+
+</script>
+
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</body>
+</html>

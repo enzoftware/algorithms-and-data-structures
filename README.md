@@ -1,4 +1,4 @@
-#AlgoritmosYEstructurasDeDatos_CC68
+<h1> AlgoritmosYEstructurasDeDatos_CC68</h1>
  <ul>
   <li>Structs</li>
   <li>Temaplates</li>

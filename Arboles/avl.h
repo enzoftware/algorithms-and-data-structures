@@ -1,5 +1,4 @@
 #include <functional>
-
 template <typename T, T iniT=0> class AVLTree {
     struct Node {
         T e;

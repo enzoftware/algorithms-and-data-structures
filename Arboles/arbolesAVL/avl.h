@@ -1,9 +1,5 @@
-#ifndef __ARBOLB_H__
-#define __ARBOLB_H__
 
-// #include <algorithm>
-
-// using namespace std;
+#include <cstddef>
 
 template <class T>
 struct Nodo {
@@ -14,8 +10,8 @@ struct Nodo {
 public:
     Nodo() {
         h = 0;
-        izq = nullptr;
-        der = nullptr;
+        izq = NULL;
+        der = NULL;
     }
 };
 
@@ -39,7 +35,7 @@ private:
     }
 
     bool _insertar(Nodo<T>*& nodo, T e) {
-        if (nodo == nullptr) {
+        if (nodo == NULL) {
             nodo = new Nodo<T>(); // h = 0
             nodo->elemento = e;
         }
@@ -77,13 +73,13 @@ private:
 
 
     void _enOrden(Nodo<T>* nodo) {
-        if (nodo == nullptr) return;
+        if (nodo == NULL) return;
         _enOrden(nodo->izq);
         procesar(nodo->elemento);
         _enOrden(nodo->der);
     }
     int _altura(Nodo<T>* nodo) {
-        if (nodo == nullptr) return -1;
+        if (nodo == NULL) return -1;
         /*int hi = _altura(nodo->izq);
         int hd = _altura(nodo->der);
         return 1 +  (hi > hd? hi: hd);*/ // implementacion optima en espacio
@@ -91,7 +87,7 @@ private:
     }
     // T _buscar(Nodo<T>* nodo, T e, function<int (T, T)> comparar) { // con lambda
     T _buscar(Nodo<T>* nodo, T e, C comparar) { // template funcional
-        if (nodo == nullptr) return 0;
+        if (nodo == NULL) return 0;
         if (comparar(e, nodo->elemento) == 0) {
             return nodo->elemento;
         } else {
@@ -107,7 +103,7 @@ public:
     ArbolAVL(P funcion1, C funcion2) { // con template funcional
         this->procesar = funcion1;
         this->comparar = funcion2;
-        raiz = nullptr;
+        raiz = NULL;
     }
     bool insertar(T e) {
         return _insertar(raiz, e);
@@ -123,5 +119,3 @@ public:
         return _buscar(raiz, e, comparar);
     }
 };
-
-#endif

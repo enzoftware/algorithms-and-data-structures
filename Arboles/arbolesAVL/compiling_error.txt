@@ -1,0 +1,61 @@
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arbolesAVL/indexandoando.cc:28:9: error: ‘function’ does not name a type
+ typedef function<void(Cancion*)> LambdaProc;
+         ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arbolesAVL/indexandoando.cc:29:9: error: ‘function’ does not name a type
+ typedef function<int(Cancion*, Cancion*)> LambdaComp;
+         ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arbolesAVL/indexandoando.cc:30:28: error: ‘LambdaProc’ was not declared in this scope
+ typedef ArbolAVL<Cancion*, LambdaProc, LambdaComp> Arbolito;
+                            ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arbolesAVL/indexandoando.cc:30:40: error: ‘LambdaComp’ was not declared in this scope
+ typedef ArbolAVL<Cancion*, LambdaProc, LambdaComp> Arbolito;
+                                        ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arbolesAVL/indexandoando.cc:30:50: error: template argument 2 is invalid
+ typedef ArbolAVL<Cancion*, LambdaProc, LambdaComp> Arbolito;
+                                                  ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arbolesAVL/indexandoando.cc:30:50: error: template argument 3 is invalid
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arbolesAVL/indexandoando.cc: In lambda function:
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arbolesAVL/indexandoando.cc:33:77: error: request for member ‘insertar’ in ‘*(Arbolito*)arbol’, which is of non-class type ‘Arbolito {aka int}’
+   for_each(canciones.begin(), canciones.end(), [arbol](Cancion* c) { arbol->insertar(c); });
+                                                                             ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arbolesAVL/indexandoando.cc: In function ‘void indexar(std::vector<Cancion*>, Arbolito*)’:
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arbolesAVL/indexandoando.cc:33:90: warning: lambda expressions only available with -std=c++11 or -std=gnu++11
+   for_each(canciones.begin(), canciones.end(), [arbol](Cancion* c) { arbol->insertar(c); });
+                                                                                          ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arbolesAVL/indexandoando.cc:33:91: error: no matching function for call to ‘for_each(std::vector<Cancion*>::iterator, std::vector<Cancion*>::iterator, indexar(std::vector<Cancion*>, Arbolito*)::<lambda(Cancion*)>)’
+   for_each(canciones.begin(), canciones.end(), [arbol](Cancion* c) { arbol->insertar(c); });
+                                                                                           ^
+In file included from /usr/include/c++/5/algorithm:62:0,
+                 from /home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arbolesAVL/indexandoando.cc:5:
+/usr/include/c++/5/bits/stl_algo.h:3761:5: note: candidate: template<class _IIter, class _Funct> _Funct std::for_each(_IIter, _IIter, _Funct)
+     for_each(_InputIterator __first, _InputIterator __last, _Function __f)
+     ^
+/usr/include/c++/5/bits/stl_algo.h:3761:5: note:   template argument deduction/substitution failed:
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arbolesAVL/indexandoando.cc: In substitution of ‘template<class _IIter, class _Funct> _Funct std::for_each(_IIter, _IIter, _Funct) [with _IIter = __gnu_cxx::__normal_iterator<Cancion**, std::vector<Cancion*> >; _Funct = indexar(std::vector<Cancion*>, Arbolito*)::<lambda(Cancion*)>]’:
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arbolesAVL/indexandoando.cc:33:91:   required from here
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arbolesAVL/indexandoando.cc:33:91: error: template argument for ‘template<class _IIter, class _Funct> _Funct std::for_each(_IIter, _IIter, _Funct)’ uses local type ‘indexar(std::vector<Cancion*>, Arbolito*)::<lambda(Cancion*)>’
+   for_each(canciones.begin(), canciones.end(), [arbol](Cancion* c) { arbol->insertar(c); });
+                                                                                           ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arbolesAVL/indexandoando.cc:33:91: error:   trying to instantiate ‘template<class _IIter, class _Funct> _Funct std::for_each(_IIter, _IIter, _Funct)’
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arbolesAVL/indexandoando.cc: In function ‘int main()’:
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arbolesAVL/indexandoando.cc:48:8: error: ‘mostrar’ does not name a type
+   auto mostrar = [](Cancion* c) { /* no es necesario */ };
+        ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arbolesAVL/indexandoando.cc:49:8: error: ‘comparar’ does not name a type
+   auto comparar = [](Cancion* a, Cancion* b) { return a->getAnio() - b->getAnio(); }; // comparando por año
+        ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arbolesAVL/indexandoando.cc:51:34: error: ‘mostrar’ was not declared in this scope
+   Arbolito* arbol = new Arbolito(mostrar, comparar); // arbolito para indexar
+                                  ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arbolesAVL/indexandoando.cc:51:43: error: ‘comparar’ was not declared in this scope
+   Arbolito* arbol = new Arbolito(mostrar, comparar); // arbolito para indexar
+                                           ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arbolesAVL/indexandoando.cc:51:51: error: new initializer expression list treated as compound expression [-fpermissive]
+   Arbolito* arbol = new Arbolito(mostrar, comparar); // arbolito para indexar
+                                                   ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arbolesAVL/indexandoando.cc:57:29: error: request for member ‘buscar’ in ‘* arbol’, which is of non-class type ‘Arbolito {aka int}’
+   Cancion* cancion = arbol->buscar(dummy, comparar);
+                             ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arbolesAVL/indexandoando.cc:60:18: error: ‘nullptr’ was not declared in this scope
+   if (cancion != nullptr) {
+                  ^

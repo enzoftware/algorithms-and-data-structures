@@ -25,18 +25,6 @@ private:
     }
   }
 
-  void _eliminar(Nodo<T>*& nodo , T e){
-    if(nodo->elemento != e) {
-      if(e < nodo->elemento) _eliminar(nodo->izq, e);
-      else _eliminar(nodo->der ,e);
-    }else{
-      if(nodo->izq == NULL && nodo->der == NULL){ // Eliminando hoja
-        cout<<"Hola";
-      }
-    }
-
-  }
-
   void _enOrden(Nodo<T>* nodo) {
     if (nodo == NULL) return;
     _enOrden(nodo->izq);

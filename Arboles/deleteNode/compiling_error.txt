@@ -1,0 +1,59 @@
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/deleteNode/Source.cpp:24:9: error: ‘function’ does not name a type
+ typedef function<void(int)> LambdaProc;
+         ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/deleteNode/Source.cpp:25:9: error: ‘function’ does not name a type
+ typedef function<int(int, int)> LambdaComp;
+         ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/deleteNode/Source.cpp:26:23: error: ‘LambdaProc’ was not declared in this scope
+ typedef ArbolAVL<int, LambdaProc, LambdaComp> Arbolito;
+                       ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/deleteNode/Source.cpp:26:35: error: ‘LambdaComp’ was not declared in this scope
+ typedef ArbolAVL<int, LambdaProc, LambdaComp> Arbolito;
+                                   ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/deleteNode/Source.cpp:26:45: error: template argument 2 is invalid
+ typedef ArbolAVL<int, LambdaProc, LambdaComp> Arbolito;
+                                             ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/deleteNode/Source.cpp:26:45: error: template argument 3 is invalid
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/deleteNode/Source.cpp: In function ‘int main()’:
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/deleteNode/Source.cpp:30:7: error: ‘impr’ does not name a type
+  auto impr = [](int) {};
+       ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/deleteNode/Source.cpp:31:7: error: ‘comparar’ does not name a type
+  auto comparar = [](int a, int b) { return a - b; };
+       ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/deleteNode/Source.cpp:33:27: error: ‘comparar’ was not declared in this scope
+  Arbolito arbol(imprimir, comparar); // la nueva escuela
+                           ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/deleteNode/Source.cpp:33:35: error: expression list treated as compound expression in initializer [-fpermissive]
+  Arbolito arbol(imprimir, comparar); // la nueva escuela
+                                   ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/deleteNode/Source.cpp:50:8: error: request for member ‘insertar’ in ‘arbol’, which is of non-class type ‘Arbolito {aka int}’
+  arbol.insertar(50);
+        ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/deleteNode/Source.cpp:51:8: error: request for member ‘insertar’ in ‘arbol’, which is of non-class type ‘Arbolito {aka int}’
+  arbol.insertar(60);
+        ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/deleteNode/Source.cpp:52:8: error: request for member ‘insertar’ in ‘arbol’, which is of non-class type ‘Arbolito {aka int}’
+  arbol.insertar(70);
+        ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/deleteNode/Source.cpp:53:8: error: request for member ‘insertar’ in ‘arbol’, which is of non-class type ‘Arbolito {aka int}’
+  arbol.insertar(80);
+        ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/deleteNode/Source.cpp:54:8: error: request for member ‘insertar’ in ‘arbol’, which is of non-class type ‘Arbolito {aka int}’
+  arbol.insertar(90);
+        ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/deleteNode/Source.cpp:55:8: error: request for member ‘insertar’ in ‘arbol’, which is of non-class type ‘Arbolito {aka int}’
+  arbol.insertar(40);
+        ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/deleteNode/Source.cpp:56:8: error: request for member ‘insertar’ in ‘arbol’, which is of non-class type ‘Arbolito {aka int}’
+  arbol.insertar(30);
+        ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/deleteNode/Source.cpp:57:8: error: request for member ‘enOrden’ in ‘arbol’, which is of non-class type ‘Arbolito {aka int}’
+  arbol.enOrden();
+        ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/deleteNode/Source.cpp:58:8: error: request for member ‘eliminar’ in ‘arbol’, which is of non-class type ‘Arbolito {aka int}’
+  arbol.eliminar(80);
+        ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/deleteNode/Source.cpp:60:8: error: request for member ‘enOrden’ in ‘arbol’, which is of non-class type ‘Arbolito {aka int}’
+  arbol.enOrden();
+        ^

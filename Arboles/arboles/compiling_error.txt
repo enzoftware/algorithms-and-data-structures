@@ -1,9 +1,0 @@
-In file included from /home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arboles/arbolBTest.cc:1:0:
-/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arboles/arbol.h: In instantiation of ‘void ArbolB<T>::eliminar(T) [with T = int]’:
-/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arboles/arbolBTest.cc:20:20:   required from here
-/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arboles/arbol.h:63:14: error: invalid initialization of non-const reference of type ‘Nodo<int>*&’ from an rvalue of type ‘Nodo<int>*’
-     _eliminar(raiz,NULL,e);
-              ^
-/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/arboles/arbol.h:28:8: note:   initializing argument 2 of ‘void ArbolB<T>::_eliminar(Nodo<T>*&, Nodo<T>*&, T) [with T = int]’
-   void _eliminar(Nodo<T>*& nodo , Nodo<T>*& nodoPadre, T e){
-        ^

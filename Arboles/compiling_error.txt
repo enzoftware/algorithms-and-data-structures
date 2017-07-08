@@ -1,0 +1,34 @@
+In file included from /home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/avltest.cpp:3:0:
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/avl.h:85:26: error: expected ‘)’ before ‘<’ token
+     AVLTree(std::function<void(T)> proc, std::function<int(T, T)> cmp)
+                          ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/avl.h:95:10: error: ‘function’ in namespace ‘std’ does not name a template type
+     std::function<void(T)>    proc;
+          ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/avl.h:96:10: error: ‘function’ in namespace ‘std’ does not name a template type
+     std::function<int(T, T)>  cmp;
+          ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/avltest.cpp: In function ‘int main()’:
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/avltest.cpp:9:45: warning: lambda expressions only available with -std=c++11 or -std=gnu++11
+         [](long long a) { cout << a << " "; },
+                                             ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/avltest.cpp:10:48: warning: lambda expressions only available with -std=c++11 or -std=gnu++11
+         [](long long a, int b) { return a - b; }
+                                                ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/avltest.cpp:11:5: error: new initializer expression list treated as compound expression [-fpermissive]
+     );
+     ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/avltest.cpp:11:5: error: no matching function for call to ‘AVLTree<long long int>::AVLTree(main()::<lambda(long long int, int)>)’
+In file included from /home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/avltest.cpp:3:0:
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/avl.h:3:39: note: candidate: AVLTree<long long int>::AVLTree()
+ template <typename T, T iniT=0> class AVLTree {
+                                       ^
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/avl.h:3:39: note:   candidate expects 0 arguments, 1 provided
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/avl.h:3:39: note: candidate: AVLTree<long long int>::AVLTree(const AVLTree<long long int>&)
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/avl.h:3:39: note:   no known conversion for argument 1 from ‘main()::<lambda(long long int, int)>’ to ‘const AVLTree<long long int>&’
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/avl.h: In instantiation of ‘bool AVLTree<T, iniT>::insertar(T, AVLTree<T, iniT>::Node*&) [with T = long long int; T iniT = 0ll]’:
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/avl.h:89:49:   required from ‘bool AVLTree<T, iniT>::insertar(T) [with T = long long int; T iniT = 0ll]’
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/avltest.cpp:15:24:   required from here
+/home/enzoftware/Projects/AlgoritmosYEstructurasDeDatos_CC68/Arboles/avl.h:73:23: error: ‘cmp’ was not declared in this scope
+         } else if (cmp(e, n->e) < 0) {
+                       ^

@@ -1,4 +1,5 @@
 #include <functional>
+#include <cstddef>
 template <typename T, T iniT=0> class AVLTree {
     struct Node {
         T e;
@@ -6,29 +7,29 @@ template <typename T, T iniT=0> class AVLTree {
         int h;
 
         Node(T e = iniT,
-             Node* l = nullptr,
-             Node* r = nullptr)
+             Node* l = NULL,
+             Node* r = NULL)
             : e(e), l(l), r(r) {
-            int hl = l == nullptr? -1 : l->h;
-            int hr = r == nullptr? -1 : r->h;
+            int hl = l == NULL? -1 : l->h;
+            int hr = r == NULL? -1 : r->h;
             this->h = (hl > hr? hl : hr) + 1;
         }
     };
     int h(Node* n) {
-        return n == nullptr? -1 : n->h;
+        return n == NULL? -1 : n->h;
     }
     void fixH(Node* n) {
         n->h = (h(n->l) > h(n->r)? h(n->l) : h(n->r)) + 1;
     }
     void deleteAll(Node* n) {
-        if (n != nullptr) {
+        if (n != NULL) {
             deleteAll(n->l);
             deleteAll(n->r);
             delete n;
         }
     }
     void enOrden(Node* n)  {
-        if (n != nullptr) {
+        if (n != NULL) {
             enOrden(n->l);
             proc(n->e);
             enOrden(n->r);
@@ -65,10 +66,10 @@ template <typename T, T iniT=0> class AVLTree {
     }
     bool insertar(T e, Node*& n) {
         bool flag = false;
-        if (n == nullptr) {
+        if (n == NULL) {
             n = new Node(e);
             ++len;
-            return n != nullptr;
+            return n != NULL;
         } else if (cmp(e, n->e) < 0) {
             flag = insertar(e, n->l);
         } else {
@@ -82,7 +83,7 @@ template <typename T, T iniT=0> class AVLTree {
     }
 public:
     AVLTree(std::function<void(T)> proc, std::function<int(T, T)> cmp)
-        : root(nullptr), len(0), proc(proc), cmp(cmp) {}
+        : root(NULL), len(0), proc(proc), cmp(cmp) {}
     ~AVLTree()                 { deleteAll(root);                   }
     void enOrden()             { enOrden(root);                     }
     bool insertar(T e)         { return insertar(e, root);          }

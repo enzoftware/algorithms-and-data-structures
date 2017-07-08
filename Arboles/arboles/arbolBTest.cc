@@ -8,15 +8,17 @@ using namespace std;
 void imprimir(int e) {
   cout << " " << e;
 }
-
 int main() {
   srand(time(0));
   ArbolB<int>* arbol = new ArbolB<int>(imprimir);
-  for (int i = 0; i < 30; ++i) {
-    arbol->insertar(rand() % 100);
-  }
+  arbol->insertar(5);
+  arbol->insertar(1);
+  arbol->insertar(52);
+  arbol->insertar(2);
+  arbol->insertar(511);
+  arbol->insertar(53);
+  arbol->eliminar(2);
   arbol->enOrden();
   cout << endl;
-
   return 0;
 }

@@ -33,7 +33,7 @@ class ARBOLITOAVL{ // CREACION DEL ARBOL AVL
   void imprimirEnOrden(Nodo*n) {
     if(n != NULL) {
       imprimirEnOrden(n->left);
-      imprimir(n->elemento);
+      imprimir(n->elemento,n->altura);
       imprimirEnOrden(n->right);
     }
 
@@ -102,7 +102,7 @@ class ARBOLITOAVL{ // CREACION DEL ARBOL AVL
 
 
 public:
-  ARBOLITOAVL(void (*imprimir) (int)):raiz(NULL),numNodos(0){ //INICIANDO EL ARBOL CON UN PUNTERO A FUNCION
+  ARBOLITOAVL(void (*imprimir) (int,int)):raiz(NULL),numNodos(0){ //INICIANDO EL ARBOL CON UN PUNTERO A FUNCION
                                                               //QUE IMPRIMA UN ELEMENTO DEL ARBOL
     this->imprimir = imprimir;
   }
@@ -129,14 +129,14 @@ public:
 private:
   Nodo* raiz; //LA RAIZ DEL ARBOL
   int numNodos; //NUMERO NODOS DEL ARBOL
-  void (*imprimir)(int); //PUNTERO A FUNCION QUE OBTIENE EL VALOR DEL ARBOL
+  void (*imprimir)(int,int); //PUNTERO A FUNCION QUE OBTIENE EL VALOR DEL ARBOL
   int comparar(int a , int b){
       return a-b;  // COMPARA DOS VALORES DEL ARBOL
   }
 };
 
-void printTree(int e){
-  cout<<" "<<e;
+void printTree(int e , int h){
+  cout<<e<<endl;
 }
 
 int main(int argc, char const *argv[]) {
